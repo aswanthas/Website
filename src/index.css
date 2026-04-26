@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-primary: #0A192F; /* Deep Navy Blue */
+  --color-primary-light: #112240;
+  --color-primary-lighter: #233554;
+  --color-accent: #D4AF37; /* Premium Gold */
+  --color-accent-light: #F3E5AB;
+  --color-accent-dark: #AA8C2C;
+  --color-white: #FFFFFF;
+  --color-light-bg: #F8FAFC;
+  --color-text: #334155;
+  --color-text-light: #64748B;
+  --color-border: #E2E8F0;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-subheading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing System */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Container */
+  --container-width: 1280px;
+  --container-padding: 2rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Box Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-gold: 0 4px 14px 0 rgba(212, 175, 55, 0.39);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-light-bg);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5, .bg-primary h6 {
+  color: var(--color-white);
+}
+
+.bg-light {
+  background-color: var(--color-light-bg);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.text-gold {
+  color: var(--color-accent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes fadeInMain {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-panel-dark {
+  background: rgba(10, 25, 47, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
